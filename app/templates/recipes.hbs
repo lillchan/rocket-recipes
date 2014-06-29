@@ -4,3 +4,19 @@
   <li>{{#link-to 'recipe' recipe}}{{recipe.name}}{{/link-to}}</li>
 {{/each}}
 </ul>
+
+<hr>
+
+<h2>New Recipe</h2>
+
+<form role="form" {{action 'newRecipe' on='submit'}}>
+  <div class="form-group">
+    <label>Name</label>
+    {{input class="form-control" placeholder="Enter name" value=recipe.name}}
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    {{textarea class="form-control" placeholder="Enter description" value=recipe.description}}
+  </div>
+  <button type="submit" class="btn btn-default">Save</button>
+</form>

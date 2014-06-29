@@ -1,22 +1,24 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 var Ingrediant = DS.Model.extend({
-  name: DS.attr('string')
+  name: DS.attr('string'),
+  description: DS.attr('string')
 });
 
-Ingrediant.FIXTURES = [
- {
-   id: 1,
-   name: 'broccoli'
- },
- {
-   id: 2,
-   name: 'tofu'
- },
- {
-   id: 3,
-   name: 'fish'
- }
+var ingrediantNames = [
+  'broccoli',
+  'tofu',
+  'fish'
 ];
+
+Ingrediant.reopenClass({
+  FIXTURES: Ember.$.map(ingrediantNames, function (name, index) {
+    return {
+      id: index + 1,
+      name: name
+    };
+  })
+});
 
 export default Ingrediant;

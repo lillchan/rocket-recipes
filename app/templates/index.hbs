@@ -1,6 +1,35 @@
-<h2>Recipes</h2>
-<ul>
-{{#each recipe in model}}
-  <li>{{#link-to 'recipe' recipe}}{{recipe.name}}{{/link-to}}</li>
-{{/each}}
-</ul>
+<div class="page-header">
+  <h1>Rocket Recipes <small>blasting off to planet food</small></h1>
+</div>
+
+<p class="lead">Let's do some stuff woo!</p>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://lorempixel.com/300/300/food/1/">
+      <div class="caption">
+        <h3>{{#link-to 'recipes'}}Recipes{{/link-to}}</h3>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://lorempixel.com/300/300/food/2/">
+      <div class="caption">
+        <h3>{{#link-to 'ingrediants'}}Ingrediants{{/link-to}}</h3>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://lorempixel.com/300/300/food/3/">
+      <div class="caption">
+        <h3>Shopping Lists</h3>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+</div>
