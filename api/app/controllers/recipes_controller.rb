@@ -1,4 +1,4 @@
-class SpeakersController < ApplicationController
+class RecipesController < ApplicationController
 	def index
 		render json: Recipe.all
 	end
