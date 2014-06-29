@@ -1,0 +1,22 @@
+<h2>Ingrediants</h2>
+<ul>
+{{#each ingrediant in model}}
+  <li>{{#link-to 'ingrediant' ingrediant}}{{ingrediant.name}}{{/link-to}}</li>
+{{/each}}
+</ul>
+
+<hr>
+
+<h2>New Ingrediant</h2>
+
+<form role="form" {{action 'newIngrediant' on='submit'}}>
+  <div class="form-group">
+    <label>Name</label>
+    {{input class="form-control" placeholder="Enter name" value=ingrediant.name}}
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    {{textarea class="form-control" placeholder="Enter description" value=ingrediant.description}}
+  </div>
+  <button type="submit" class="btn btn-default">Save</button>
+</form>
