@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RocketRecipes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/rocket-recipes.css">
+  </head>
+  <body>
+    <script>
+      window.RocketRecipesENV = {{ENV}};
+      window.EmberENV = window.RocketRecipesENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/rocket-recipes.js"></script>
+    <script>
+      window.RocketRecipes = require('rocket-recipes/app')['default'].create(RocketRecipesENV.APP);
+    </script>
+  </body>
+</html>
