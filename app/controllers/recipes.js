@@ -9,8 +9,16 @@ export default Ember.Controller.extend({
 
       var RecipesController = this;
 
-      RecipesController.store.createRecord('recipe', this.get('recipe')).save().then(function () {
+      RecipesController.set('recipe.error', null);
+
+      var newRecipe = RecipesController.store.createRecord('recipe', RecipesController.get('recipe'));
+
+      newRecipe.save().then(function () {
         RecipesController.set('recipe', {});
+      }).catch(function (error) {
+        Ember.Logger.warn(error);
+        RecipesController.set('recipe.error', error);
+        newRecipe.destroyRecord();
       });
     }
   }
