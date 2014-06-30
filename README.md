@@ -10,7 +10,8 @@ This README outlines the details of collaborating on this Ember application.
 
 ## Running
 
-* `ember server`
+* `ember server --proxy http://localhost:3000`
+* `cd api && rails s`
 * Visit your app at http://localhost:4200.
 
 ## Running Tests
