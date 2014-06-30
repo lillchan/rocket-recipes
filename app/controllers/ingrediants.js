@@ -2,15 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  ingrediant: {},
+  ingredient: {},
 
   actions: {
-    newIngrediant: function () {
+    newIngredient: function () {
 
-      var IngrediantsController = this;
+      var IngredientsController = this;
 
-      IngrediantsController.store.createRecord('ingrediant', this.get('ingrediant')).save().then(function () {
-        IngrediantsController.set('ingrediant', {});
+      IngredientsController.store.createRecord('ingredient', this.get('ingredient')).save().then(function () {
+        IngredientsController.set('ingredient', {});
       });
     }
   }

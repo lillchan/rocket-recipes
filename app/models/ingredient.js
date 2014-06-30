@@ -1,19 +1,19 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 
-var Ingrediant = DS.Model.extend({
+var Ingredient = DS.Model.extend({
   name: DS.attr('string'),
   description: DS.attr('string')
 });
 
-var ingrediantNames = [
+var ingredientNames = [
   'broccoli',
   'tofu',
   'fish'
 ];
 
-Ingrediant.reopenClass({
-  FIXTURES: Ember.$.map(ingrediantNames, function (name, index) {
+Ingredient.reopenClass({
+  FIXTURES: Ember.$.map(ingredientNames, function (name, index) {
     return {
       id: index + 1,
       name: name
@@ -21,4 +21,4 @@ Ingrediant.reopenClass({
   })
 });
 
-export default Ingrediant;
+export default Ingredient;
