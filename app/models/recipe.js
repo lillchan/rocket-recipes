@@ -3,7 +3,7 @@ import DS from 'ember-data';
 
 var Recipe = DS.Model.extend({
   name: DS.attr('string'),
-  desctription: DS.attr('string'),
+  description: DS.attr('string'),
   source: DS.attr('string')
 });
 
