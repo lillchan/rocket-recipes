@@ -19,6 +19,16 @@ class IngredientsController < ApplicationController
 		render json: Ingredient.find(params[:id])
 	end
 
+	def update
+		@ingredient = Ingredient.find(params[:id])
+
+		if @ingredient.update_attributes(user_params)
+			render :json => @ingredient
+		else
+			render :json => { :errors => @ingredient.errors.full_messages }
+		end
+	end
+
 	private
 
 	def user_params
