@@ -13,8 +13,8 @@ export default Ember.Controller.extend({
 
       var newIngredient = IngredientsController.store.createRecord('ingredient', IngredientsController.get('ingredient'));
 
-      newIngredient.save().then(function () {
-        IngredientsController.set('ingredient', {});
+      newIngredient.save().then(function (ingredient) {
+        IngredientsController.transitionToRoute('ingredient', ingredient);
       }).catch(function (error) {
         Ember.Logger.warn(error);
         IngredientsController.set('ingredient.error', error);

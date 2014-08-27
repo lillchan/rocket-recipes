@@ -10,5 +10,11 @@
 
 <span><strong>Source:</strong> {{model.source}}</span>
 
+{{#each model.errors.messages}}
+  <div class="error">
+    {{message}}
+  </div>
+{{/each}}
+
 {{input class="form-control" value=model.name}}
 <button type="button" class="btn btn-primary" {{action "save"}}>Save</button>
