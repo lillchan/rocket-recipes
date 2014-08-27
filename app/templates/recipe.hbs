@@ -1,11 +1,14 @@
 <ol class="breadcrumb">
   <li>{{#link-to 'index'}}Home{{/link-to}}</li>
   <li>{{#link-to 'recipes'}}Recipes{{/link-to}}</li>
-  <li class="active">{{name}}</li>
+  <li class="active">{{model.name}}</li>
 </ol>
 
-<h2>{{name}}</h2>
+<h2>{{model.name}}</h2>
 
-<p class="lead">{{description}}</p>
+<p class="lead">{{model.description}}</p>
 
-<span><strong>Source:</strong> {{source}}</span>
+<span><strong>Source:</strong> {{model.source}}</span>
+
+{{input class="form-control" value=model.name}}
+<button type="button" class="btn btn-primary" {{action "save"}}>Save</button>

@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
       var newRecipe = RecipesController.store.createRecord('recipe', RecipesController.get('recipe'));
 
-      newRecipe.save().then(function () {
+      newRecipe.save().then(function (recipe) {
         RecipesController.set('recipe', {});
       }).catch(function (error) {
         Ember.Logger.warn(error);
